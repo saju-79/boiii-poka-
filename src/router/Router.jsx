@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router';
 import Root from '../pasges/root/Root';
 import Error from '../pasges/error/Error';
 import Home from '../pasges/home/Home';
+import Ditels from '../pasges/bookDitels/Ditels';
 
 export  const router = createBrowserRouter([
     {
@@ -15,6 +16,11 @@ export  const router = createBrowserRouter([
                 path:"/",
                 loader:()=>fetch('data.json'),
                 Component:Home,
+            },
+            {
+                path:"/bookDitels/:id" ,
+                loader: ()=>fetch('data.json') ,
+                Component:Ditels
             }
         ]
     }

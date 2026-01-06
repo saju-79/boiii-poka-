@@ -9,7 +9,7 @@ import Book from "./Book";
 
 const Books = ({allData} ) => {
       
-   console.log(allData)
+   
    
     return (
         <div className="">
@@ -18,7 +18,7 @@ const Books = ({allData} ) => {
           <Suspense>
               <div className=' p-2  grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3'>
                {
-                allData.map(singleData => <Book singleData={singleData}></Book>)
+                allData.map(singleData => <Book key={singleData.bookId} singleData={singleData}></Book>)
                 }
            </div>
           </Suspense>

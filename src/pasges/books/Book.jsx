@@ -1,12 +1,14 @@
 import React from 'react';
 import { FaRegStar } from "react-icons/fa";
+import { Link } from 'react-router';
 
 const Book = ({singleData}) => {
-    const {image ,author ,bookName ,rating ,category,tags} = singleData
+    const {image ,author ,bookName ,rating ,category,tags , yearOfPublishing ,bookId  } = singleData
  
-  console.log(singleData)
+  
     return (
-       <div className="card bg-base-100 w-full p-4 shadow-sm  space-y-2">
+          <Link to={`/bookDitels/${bookId}`}>
+                <div className="card bg-base-100 w-full p-4 shadow-sm  space-y-2">
   <figure className='p-6 bg-gray-200 w-2/3 mx-auto rounded-lg  '>
     <img
     className='p-6 h-70 '
@@ -14,14 +16,17 @@ const Book = ({singleData}) => {
       alt="Shoes" />
   </figure>
   <div className="card-body    w-2/3 mx-auto rounded-lg ">
+  
     <div className="card-title">
        <p className='text-[#23BE0A] text-md font-medium'>{tags[0]}</p>
        <p className='text-[#23BE0A] text-md font-medium'>{tags[1]}</p>
     </div>
+   
      <div className="text-start space-y-1">
-       <h1 className='font-bold text-xl text-[#131313]'>{bookName}</h1>
-       <p className='text-sm font-medium text-[#131313]'>by{author}</p>
+       <h1 className='font-bold text-xl text-[#131313]  gap-1'>{bookName} <div className="badge badge-secondary">{yearOfPublishing}</div></h1>
+       <p className='text-sm font-medium text-[#131313]'>by  {author}</p>
      </div>
+     <div className="border-t-2 border-dashed"></div>
     <div className=" flex justify-between">
      <p className='text-sm font-medium text-[#131313]'>{category}</p>
      <p className='text-sm font-medium text-[#131313] flex gap-1 text-end  items-center'>{rating} <FaRegStar /> </p>
@@ -29,6 +34,7 @@ const Book = ({singleData}) => {
     </div>
   </div>
 </div>
+          </Link>
     );
 };
 

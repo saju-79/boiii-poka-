@@ -1,9 +1,27 @@
-import React from 'react';
+import { Suspense } from "react";
+import Book from "./Book";
 
-const Books = () => {
+ 
+
+ 
+
+ 
+
+const Books = ({allData} ) => {
+      
+   console.log(allData)
+   
     return (
-        <div className='bg-gray-300 p-10'>
-        ami Books
+        <div className="">
+
+            <h1 className="text-center  items-center font-bold text-2xl text-[#181818] my-10">Books</h1>
+          <Suspense>
+              <div className=' p-2  grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3'>
+               {
+                allData.map(singleData => <Book singleData={singleData}></Book>)
+                }
+           </div>
+          </Suspense>
         </div>
     );
 };

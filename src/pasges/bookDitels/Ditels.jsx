@@ -1,12 +1,20 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import { addTostotredData } from '../../commponet/localstorge/local-stire-data';
+import { ToastContainer, toast } from 'react-toastify';
+ 
 
 const Ditels = () => {
 
 
     const handelReastditels = (id) =>{
          addTostotredData(id)
+       toast("Wow so easy!");
+     
+
+
+
+
     }
     const {id} = useParams()
       const convartId = parseInt(id)
@@ -51,6 +59,7 @@ justify-around">
         <p className='text-2xl font-bold text-end'>{publisher}</p>
     </div>
     <div className="text-end  gap-2">
+        <ToastContainer />
         <button onClick={()=>handelReastditels( convartId)} className="btn btn-soft font-bold text-[#131313] text-lg mx-4">Read Default</button>
         <button className="btn font-bold text-[#FFFFFF] text-lg  btn-accent"> Add to Accent</button>
     </div>

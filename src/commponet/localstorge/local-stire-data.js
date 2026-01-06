@@ -1,3 +1,6 @@
+
+import { ToastContainer, toast } from 'react-toastify';
+
 const getstorgeBook =() =>{
     const storgeBookSTR =localStorage.getItem("read-list");
     if (storgeBookSTR ) {
@@ -10,8 +13,9 @@ const getstorgeBook =() =>{
 
 const addTostotredData =(id) =>{
     const storegeBookDb = getstorgeBook()
-    if (storegeBookDb.ibcludes(id)) {
+    if (storegeBookDb.includes(id) ) {
         alert("allady aseeee")
+         toast("Wow so easy!");
     }
     else{
         storegeBookDb.push(id);

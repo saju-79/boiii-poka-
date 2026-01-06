@@ -2,9 +2,11 @@ import React from 'react';
 import { FaRegStar } from "react-icons/fa";
 import { Link } from 'react-router';
 
+
+
 const Book = ({singleData}) => {
     const {image ,author ,bookName ,rating ,category,tags , yearOfPublishing ,bookId  } = singleData
- 
+
   
     return (
           <Link to={`/bookDitels/${bookId}`}>

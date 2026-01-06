@@ -3,7 +3,8 @@ import { Link, NavLink } from 'react-router';
 
 const Navber = () => {
   const links = <>
-      <NavLink  ><li  id='li-btn' className='text-lg text-[#131313] font-semibold mx-3 li-btn '>Home</li></NavLink>
+      <NavLink to="/"
+      ><li  id='li-btn' className='text-lg text-[#131313] font-semibold mx-3 li-btn '>Home</li></NavLink>
       <Link to={`/bookDitels/:id`}><li id='li-btn' className='text-lg text-[#131313] font-semibold mx-3 li-btn '>Listed Books</li></Link>
       <li id='li-btn' className='text-lg text-[#131313] font-semibold mx-3 li-btn '>Pages to Read</li>
   </>
